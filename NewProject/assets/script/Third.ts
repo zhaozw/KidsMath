@@ -87,7 +87,10 @@ export default class Third extends cc.Component {
     blank_ok(){
         let num:number = 0;
         for(let i:number=0; i<this.blankList.length;i++){
-            num += parseInt(this.blankList[i].getChildByName("num").getComponent(cc.Label).string) * Math.pow(10, i);
+            let str:string = this.blankList[i].getChildByName("num").getComponent(cc.Label).string;
+            if(str != ""){
+                num += parseInt(str) * Math.pow(10, i);
+            }
         }
         this.ok(num);
     }
