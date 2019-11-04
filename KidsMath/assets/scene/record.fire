@@ -711,7 +711,7 @@
     },
     "_enabled": true,
     "duration": 0.1,
-    "zoomScale": 1.05,
+    "zoomScale": 1.2,
     "clickEvents": [
       {
         "__id__": 16

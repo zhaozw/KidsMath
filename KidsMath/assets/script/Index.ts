@@ -9,8 +9,16 @@ export default class Index extends cc.Component {
     audioMg:AudioManager;
   
     start () {
+        GameMg.instance.ini();
         this.audioMg = this.node.parent.getComponent(AudioManager);
+
+        let that = this;
+        this.schedule(function(){   
+            GameMg.instance.removeLoading();
+        }, 0, 0, 0.5);
+        
     }
+    
 
 
     toSecond(event){

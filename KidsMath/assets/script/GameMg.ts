@@ -39,7 +39,7 @@ export default class GameMg{
 
     load(){
         let record:string = GameData.instance.getStr("list");
-        console.log(record);
+        console.log("record:" + record);
         if(record != ""){
             this.recordList = JSON.parse(record);
         }
@@ -101,5 +101,15 @@ export default class GameMg{
     refresh(){
         let result:string = JSON.stringify(this.recordList);
         GameData.instance.saveStr("list", result);
+    }
+
+    removeLoading(){
+        if (cc.sys.os === cc.sys.OS_ANDROID) {
+            let className = "org/cocos2dx/javascript/AppActivity";
+            let sigs = "()V";
+            jsb.reflection.callStaticMethod(className, "removeLaunchImage", sigs);
+        }else if(cc.sys.os === cc.sys.OS_IOS) {
+            jsb.reflection.callStaticMethod("AppController", "hideWelcome");
+        }
     }
 }

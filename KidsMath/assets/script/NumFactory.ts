@@ -6,7 +6,7 @@ export default class NumFactory{
     NUM_DATA_1 = [ [1, 10], [10, 25], [25, 50], [50, 100], [100, 250], [250, 500], [500, 1000], [1000, 5000]];
     NUM_DATA_2 = [ [1, 10], [1, 20] , [10, 30], [20, 40] , [20, 50]  , [30, 55]  , [30 , 65]  , [40, 70]    ];
 
-    count = 3;
+    count = 10;
 
     getList(type:number, operator:string){
         let NUM_DATA:Array<Array<number>> = this.NUM_DATA_1;
