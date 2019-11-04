@@ -46,6 +46,6 @@ export default class Record extends cc.Component {
     }
 
     back(){
-        cc.director.loadScene("second");
+        cc.director.loadScene("index");
     }
 }
